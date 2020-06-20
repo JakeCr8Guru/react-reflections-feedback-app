@@ -7,6 +7,7 @@ import { HashRouter as Router, Route } from "react-router-dom";
 import Start from '../Start/Start';
 import Feeling from "../Feeling/Feeling";
 import Understanding from "../Understanding/Understanding";
+import Supported from "../Supported/Supported";
 
 const Content = () => {
   return (
@@ -20,6 +21,9 @@ const Content = () => {
         </Route>
         <Route path="/understanding">
           <Understanding />
+        </Route>
+        <Route path="/supported">
+          <Supported />
         </Route>
       </Router>
     </div>
