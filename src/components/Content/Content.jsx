@@ -3,11 +3,15 @@ import React from "react";
 // React Router DOM imports:
 import { HashRouter as Route } from "react-router-dom";
 
+// Component imports:
+import Start from '../Start/Start';
+
 const Content = () => {
   return (
     <div>
-      <h1>Does this work?</h1>
-      <Route exact path="/"></Route>
+      <Route exact path="/">
+        <Start/>
+      </Route>
     </div>
   );
 };
