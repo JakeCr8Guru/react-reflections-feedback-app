@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// Primer imports:
-// import { BaseStyles } from '@primer/components'
+// React Router DOM imports:
+import { HashRouter as Router, Route } from "react-router-dom";
 
 // Chakra imports:
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
@@ -16,12 +16,17 @@ class App extends Component {
     return (
       <ThemeProvider>
         <CSSReset />
-        <div className="App">
-          <Layout>
-            <h1>Does this work?</h1>
-          </Layout>
-          <br />
-        </div>
+        <Router>
+          <div className="App">
+            <Layout>
+              <h1>Does this work?</h1>
+              <Route exact path="/">
+                
+              </Route>
+            </Layout>
+            <br />
+          </div>
+        </Router>
       </ThemeProvider>
     );
   }

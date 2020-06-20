@@ -24,7 +24,7 @@ const Header = () => {
             </Heading>
           </Flex>
           <Flex align="center" mr={2}>
-            <Heading as="h1" size="m" letterSpacing={".1rem"}>
+            <Heading as="h1" size="sm" letterSpacing={".1rem"}>
               Please do one every day
             </Heading>
           </Flex>
