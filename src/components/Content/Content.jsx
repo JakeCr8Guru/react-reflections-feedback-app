@@ -8,6 +8,7 @@ import Start from '../Start/Start';
 import Feeling from "../Feeling/Feeling";
 import Understanding from "../Understanding/Understanding";
 import Supported from "../Supported/Supported";
+import Comments from "../Comments/Comments";
 
 const Content = () => {
   return (
@@ -24,6 +25,9 @@ const Content = () => {
         </Route>
         <Route path="/supported">
           <Supported />
+        </Route>
+        <Route path="/comments">
+          <Comments />
         </Route>
       </Router>
     </div>
