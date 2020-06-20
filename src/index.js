@@ -8,8 +8,19 @@ import registerServiceWorker from "./registerServiceWorker";
 import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 
+// This is the reducer that stores the inputs from the feedback loop
+const feedbackReducer = (state = [], action) => {
+  let newState = [...state];
+  if (action.type === "ADD_FEEDBACK") {
+    newState = [...action.payload];
+  }
+  return newState;
+};
+
 const storeInstance = createStore(
-  combineReducers({}),
+  combineReducers({
+    feedbackReducer,
+  }),
   // redux devtools (browser extension): could also do redux logger here
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
