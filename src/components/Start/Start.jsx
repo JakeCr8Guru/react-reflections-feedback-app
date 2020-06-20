@@ -1,13 +1,13 @@
 import React from "react";
 
 // React Router DOM imports:
-import { HashRouter as Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Start = () => {
   return (
     <div>
       <h1>Start your reflection for the day</h1>
-      <Link>
+      <Link to="/feeling">
         <button>Start</button>
       </Link>
     </div>

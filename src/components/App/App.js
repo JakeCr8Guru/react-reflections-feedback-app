@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 // React Router DOM imports:
-import { HashRouter as Router } from "react-router-dom";
+// import { HashRouter as Router } from "react-router-dom";
 
 // Chakra imports:
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
@@ -17,14 +17,11 @@ class App extends Component {
     return (
       <ThemeProvider>
         <CSSReset />
-        <Router>
           <div className="App">
             <Layout>
               <Content/>
             </Layout>
-            <br />
           </div>
-        </Router>
       </ThemeProvider>
     );
   }
