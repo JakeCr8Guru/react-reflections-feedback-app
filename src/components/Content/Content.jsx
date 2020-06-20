@@ -4,7 +4,7 @@ import React from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
 
 // Chakra imports:
-import { Box, Flex } from "@chakra-ui/core";
+import { Flex } from "@chakra-ui/core";
 
 // Component imports:
 import Start from "../Start/Start";
