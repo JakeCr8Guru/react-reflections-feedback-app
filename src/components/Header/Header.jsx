@@ -15,7 +15,7 @@ const Header = () => {
           justify="start"
           wrap="wrap"
           padding="1.5rem"
-          bg="teal"
+          bg="teal.500"
           color="white"
         >
           <Flex align="center" mr={4}>
