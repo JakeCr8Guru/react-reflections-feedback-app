@@ -3,16 +3,28 @@ import React from "react";
 // React Router DOM imports:
 import { HashRouter as Router, Route } from "react-router-dom";
 
+// Chakra imports:
+import { Box, Flex } from "@chakra-ui/core";
+
 // Component imports:
-import Start from '../Start/Start';
+import Start from "../Start/Start";
 import Feeling from "../Feeling/Feeling";
 import Understanding from "../Understanding/Understanding";
 import Supported from "../Supported/Supported";
 import Comments from "../Comments/Comments";
+import Review from "../Review/Review";
 
 const Content = () => {
   return (
-    <div>
+    <Flex
+      bg="gray.50"
+      size="500px"
+      align="center"
+      justify="center"
+      color="gray.80"
+      borderWidth="1px"
+      rounded="lg"
+    >
       <Router>
         <Route exact path="/">
           <Start />
@@ -29,8 +41,11 @@ const Content = () => {
         <Route path="/comments">
           <Comments />
         </Route>
+        <Route path="/review">
+          <Review />
+        </Route>
       </Router>
-    </div>
+    </Flex>
   );
 };
 

@@ -11,7 +11,7 @@ const Comments = () => {
     <div>
       <h1>Any comments you want to leave?</h1>
       <Input placeholder="1 - 10" size="lg" isRequired="true" />
-      <Link>
+      <Link to="/review">
         <button>NEXT</button>
       </Link>
     </div>
