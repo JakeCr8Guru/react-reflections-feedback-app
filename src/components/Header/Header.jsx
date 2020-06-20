@@ -1,19 +1,36 @@
 import React from 'react';
 
 // Primer imports:
-import { Flex, Box, Heading } from '@primer/components'
+// import { Flex, Box, Heading, Text, Grid } from '@primer/components'
+
+// Chakra imports:
+import { Heading, Flex } from "@chakra-ui/core";
 
 const Header = () => {
     return (
-        <>
-            <Flex justifyContent="center" bg="blue.3" width={1} p={4} >
-                <Box>
-                    <Heading as="h1" fontSize={4} mb={2}>Feedback</Heading>
-                    <h4><i>Don't forget it!</i></h4>
-                </Box>
-            </Flex>
-        </>
-    )
+      <>
+        <Flex
+          as="nav"
+          align="center"
+          justify="start"
+          wrap="wrap"
+          padding="1.5rem"
+          bg="teal"
+          color="white"
+        >
+          <Flex align="center" mr={4}>
+            <Heading as="h1" size="lg" letterSpacing={".1rem"}>
+              Reflections
+            </Heading>
+          </Flex>
+          <Flex align="center" mr={2}>
+            <Heading as="h1" size="m" letterSpacing={".1rem"}>
+              Please do one every day
+            </Heading>
+          </Flex>
+        </Flex>
+      </>
+    );
 }
 
 export default Header;
