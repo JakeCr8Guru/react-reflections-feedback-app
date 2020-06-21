@@ -1,18 +1,31 @@
 import React from 'react';
 
-// Primer imports:
-import { Fixed, Box } from '@primer/components'
+// Chakra imports:
+import { Heading, Flex } from "@chakra-ui/core";
 
 const Footer = () => {
     return (
-        <>
-            <Fixed bg="blue.3" bottom={0} width={1} p={4} >
-                <Box>
-                    <p>This is the footer</p>
-                </Box>
-            </Fixed>
-        </>
-    )
+      <>
+        <Flex
+          as="nav"
+          align="center"
+          justify="start"
+          wrap="wrap"
+          padding="1.5rem"
+          bg="teal.500"
+          color="white"
+        >
+          <Flex align="center" p={4}>
+            <Heading as="h4" size="sm" letterSpacing={".1rem"}>
+              "There are three methods to gaining wisdom. The first is
+              reflection, which is the highest. The second is limitation, which
+              is the easiest. The third is experience, which is the bitterest."
+              ~ Confucius
+            </Heading>
+          </Flex>
+        </Flex>
+      </>
+    );
 }
 
 export default Footer;

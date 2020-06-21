@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 });
 
 // POST to DB
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   const reflection = req.body;
   console.log(reflection);
   const { feeling, understanding, support, comments } = req.body;
@@ -31,9 +31,7 @@ router.post('/', (req, res) => {
   }
 
   if (feeling === null || understanding === null || support === null) {
-    res
-      .status(400)
-      .send("A value came in as null check input values");
+    res.status(400).send("A value came in as null check input values");
     return;
   }
 
@@ -42,38 +40,23 @@ router.post('/', (req, res) => {
     return;
   }
 
-  // For some reason this is not working...
-  // if (
-  //   typeof feeling === "string" ||
-  //   typeof understanding === "string" ||
-  //   typeof support === "string"
-  // ) {
-  //   Number(feeling);
-  //   Number(understanding);
-  //   Number(support);
-  //   return;
-  // } else {
-  //   res
-  //     .status(400)
-  //     .send("typeof is not a number 400 error please fix something");
-  // }
+  if (feeling === NaN || understanding === NaN || support === NaN) {
+    res.status(400).send("A value came in as NaN check input values");
+    return;
+  }
 
-  const queryText = 'INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4);';
-	pool.query(queryText, [
-			feeling,
-			understanding,
-      support,
-      comments,
-		])
-		.then((result) => {
-			console.log('finished posting!', result.rows);
-			res.status(201);
-		})
-		.catch((err) => {
-			console.log(err);
-			res.sendStatus(500);
-		});
+  const queryText =
+    'INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4);';
+  pool
+    .query(queryText, [feeling, understanding, support, comments])
+    .then(() => {
+      console.log("finished posting!");
+      res.status(201);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
 });
-
 
 module.exports = router;

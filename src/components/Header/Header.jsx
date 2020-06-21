@@ -1,8 +1,5 @@
 import React from 'react';
 
-// Primer imports:
-// import { Flex, Box, Heading, Text, Grid } from '@primer/components'
-
 // Chakra imports:
 import { Heading, Flex } from "@chakra-ui/core";
 
