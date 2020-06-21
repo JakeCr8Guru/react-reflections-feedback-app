@@ -9,7 +9,28 @@ import { Grid, Heading, Box, Button } from "@chakra-ui/core";
 // Redux imports:
 import { connect } from "react-redux";
 
+// Axios imports:
+import axios from "axios";
+
 const Review = (props) => {
+
+  const feedbackPost = () => {
+    const { feeling, understanding, support, comments } = props;
+    const feedback = { feeling, understanding, support, comments };
+    console.log(feedback);
+    axios
+      .post("/api/feedback", feedback)
+      .then((res) => {
+        console.log(res);
+        // redirect the user to the confirmation page
+        // this.props.history.push("/checkout");
+      })
+      .catch((err) => {
+        console.log(err);
+        alert(err);
+      });
+  }
+
   return (
     <Grid gridColumn="column">
       <Box mb={4}>
@@ -40,6 +61,7 @@ const Review = (props) => {
       <Box mt={4}>
         <Link>
           <Button
+            onClick={feedbackPost}
             variantColor="green"
             variant="outline"
             size="lg"
