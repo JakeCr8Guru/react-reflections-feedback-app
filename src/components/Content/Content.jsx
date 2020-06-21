@@ -26,6 +26,7 @@ const Content = () => {
       borderWidth="1px"
       rounded="lg"
       p={6}
+      m={8}
     >
       <Router>
         <Route exact path="/">
