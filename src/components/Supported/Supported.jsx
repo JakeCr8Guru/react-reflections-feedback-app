@@ -44,14 +44,11 @@ const Supported = (props) => {
           value={value}
           onChange={handleChangeForSlider}
         >
-          <SliderTrack />
-          <SliderFilledTrack />
-          <SliderThumb
-            fontSize="sm"
-            width="32px"
-            height="20px"
-            children={value}
-          />
+          <SliderTrack bg="green.100" />
+          <SliderFilledTrack bg="teal.500" />
+          <SliderThumb fontSize="sm" width="32px" height="20px">
+            <Box color="teal.500" children={value} />
+          </SliderThumb>
         </Slider>
       </Box>
       <Box mt={8}>

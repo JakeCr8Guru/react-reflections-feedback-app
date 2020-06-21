@@ -37,6 +37,7 @@ const Feeling = (props) => {
       </Box>
       <Box mt={8}>
         <Slider
+          required
           flex="1"
           defaultValue={5}
           min={0}
@@ -44,14 +45,11 @@ const Feeling = (props) => {
           value={value}
           onChange={handleChangeForSlider}
         >
-          <SliderTrack />
-          <SliderFilledTrack />
-          <SliderThumb
-            fontSize="sm"
-            width="32px"
-            height="20px"
-            children={value}
-          />
+          <SliderTrack bg="green.100" />
+          <SliderFilledTrack bg="teal.500" />
+          <SliderThumb fontSize="sm" width="32px" height="20px">
+            <Box color="teal.500" children={value} />
+          </SliderThumb>
         </Slider>
       </Box>
       <Box mt={8}>
