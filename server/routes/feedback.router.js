@@ -42,6 +42,7 @@ router.post('/', (req, res) => {
     return;
   }
 
+  // For some reason this is not working...
   if (
     typeof feeling === "string" ||
     typeof understanding === "string" ||
@@ -66,7 +67,7 @@ router.post('/', (req, res) => {
 		])
 		.then((result) => {
 			console.log('finished posting!', result.rows);
-			res.status(202);
+			res.status(201);
 		})
 		.catch((err) => {
 			console.log(err);

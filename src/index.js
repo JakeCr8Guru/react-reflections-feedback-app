@@ -12,7 +12,7 @@ import { Provider } from "react-redux";
 const feeling = (state = null, action) => {
   let newState = state;
   if (action.type === "ADD_FEELING") {
-    newState = action.payload;
+    newState = Number(action.payload);
   }
   return newState;
 };
@@ -20,7 +20,7 @@ const feeling = (state = null, action) => {
 const understanding = (state = null, action) => {
   let newState = state;
   if (action.type === "ADD_UNDERSTANDING") {
-    newState = action.payload;
+    newState = Number(action.payload);
   }
   return newState;
 };
@@ -28,7 +28,7 @@ const understanding = (state = null, action) => {
 const support = (state = null, action) => {
   let newState = state;
   if (action.type === "ADD_SUPPORT") {
-    newState = action.payload;
+    newState = Number(action.payload);
   }
   return newState;
 };
