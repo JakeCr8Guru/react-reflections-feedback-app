@@ -4,7 +4,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // Chakra imports:
-import { Grid, Heading, Box, Button } from "@chakra-ui/core";
+import {
+  Grid,
+  Heading,
+  Box,
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+} from "@chakra-ui/core";
 
 // Redux imports:
 import { connect } from "react-redux";
@@ -14,54 +27,63 @@ import axios from "axios";
 
 const Review = (props) => {
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const onClick = () => {
+    onOpen();
+    feedbackPost();
+  }
+
   const feedbackPost = () => {
-    const { feeling, understanding, support, comments } = props;
+    const { feeling, understanding, support, comments, dispatch } = props;
     const feedback = { feeling, understanding, support, comments };
     console.log(feedback);
     axios
       .post("/api/feedback", feedback)
       .then((res) => {
         console.log(res);
+        dispatch({ type: "REST_LOOP", payload: null });
         // redirect the user to the confirmation page
-        // this.props.history.push("/checkout");
+        props.history.push("/");
       })
       .catch((err) => {
         console.log(err);
         alert(err);
       });
-  }
+  };
 
   return (
-    <Grid gridColumn="column">
-      <Box mb={4}>
-        <Heading as="h1" size="2xl">
-          Review Your Feedback
-        </Heading>
-      </Box>
-      <Box mb={4}>
-        <Heading as="h3" size="lg">
-          Feelings: {props.feeling}
-        </Heading>
-      </Box>
-      <Box mb={4}>
-        <Heading as="h3" size="lg">
-          Understanding: {props.understanding}
-        </Heading>
-      </Box>
-      <Box mb={4}>
-        <Heading as="h3" size="lg">
-          Support: {props.support}
-        </Heading>
-      </Box>
-      <Box mb={4}>
-        <Heading as="h3" size="lg">
-          Comments: {props.comments}
-        </Heading>
-      </Box>
-      <Box mt={4}>
-        <Link>
+    <>
+      <Grid gridColumn="column">
+        <Box mb={4}>
+          <Heading as="h1" size="2xl">
+            Review Your Feedback
+          </Heading>
+        </Box>
+        <Box mb={4}>
+          <Heading as="h3" size="lg">
+            Feelings: {props.feeling}
+          </Heading>
+        </Box>
+        <Box mb={4}>
+          <Heading as="h3" size="lg">
+            Understanding: {props.understanding}
+          </Heading>
+        </Box>
+        <Box mb={4}>
+          <Heading as="h3" size="lg">
+            Support: {props.support}
+          </Heading>
+        </Box>
+        <Box mb={4}>
+          <Heading as="h3" size="lg">
+            Comments: {props.comments}
+          </Heading>
+        </Box>
+        <Box mt={4}>
+          {/* <Link to="/"> */}
           <Button
-            onClick={feedbackPost}
+            onClick={onClick}
             variantColor="green"
             variant="outline"
             size="lg"
@@ -71,9 +93,28 @@ const Review = (props) => {
           >
             SUBMIT
           </Button>
-        </Link>
-      </Box>
-    </Grid>
+          {/* </Link> */}
+        </Box>
+      </Grid>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Success!</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Box count={2} />
+          </ModalBody>
+
+          <ModalFooter>
+            <Link to="/"> 
+              <Button variantColor="blue" mr={3}>
+                Done
+              </Button>
+            </Link>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
 

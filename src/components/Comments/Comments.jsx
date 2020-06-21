@@ -11,7 +11,7 @@ import { connect } from "react-redux";
 
 const Comments = (props) => {
 
-  const [input, setInput] = useState(0);
+  const [input, setInput] = useState('');
 
   const handleChange = (e) => {
     setInput(e.target.value);

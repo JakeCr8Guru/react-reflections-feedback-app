@@ -43,20 +43,20 @@ router.post('/', (req, res) => {
   }
 
   // For some reason this is not working...
-  if (
-    typeof feeling === "string" ||
-    typeof understanding === "string" ||
-    typeof support === "string"
-  ) {
-    Number(feeling);
-    Number(understanding);
-    Number(support);
-    return;
-  } else {
-    res
-      .status(400)
-      .send("typeof is not a number 400 error please fix something");
-  }
+  // if (
+  //   typeof feeling === "string" ||
+  //   typeof understanding === "string" ||
+  //   typeof support === "string"
+  // ) {
+  //   Number(feeling);
+  //   Number(understanding);
+  //   Number(support);
+  //   return;
+  // } else {
+  //   res
+  //     .status(400)
+  //     .send("typeof is not a number 400 error please fix something");
+  // }
 
   const queryText = 'INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4);';
 	pool.query(queryText, [
