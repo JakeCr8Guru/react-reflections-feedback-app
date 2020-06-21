@@ -13,6 +13,7 @@ import Understanding from "../Understanding/Understanding";
 import Supported from "../Supported/Supported";
 import Comments from "../Comments/Comments";
 import Review from "../Review/Review";
+import Admin from "../Admin/Admin";
 
 const Content = () => {
   return (
@@ -44,6 +45,9 @@ const Content = () => {
         </Route>
         <Route path="/review">
           <Review />
+        </Route>
+        <Route path="/review">
+          <Admin />
         </Route>
       </Router>
     </Flex>

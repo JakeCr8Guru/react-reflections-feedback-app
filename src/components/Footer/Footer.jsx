@@ -15,7 +15,7 @@ const Footer = () => {
           bg="teal.500"
           color="white"
         >
-          <Flex align="center" p={4}>
+          <Flex p={4}>
             <Heading as="h4" size="sm" letterSpacing={".1rem"}>
               "There are three methods to gaining wisdom. The first is
               reflection, which is the highest. The second is limitation, which
