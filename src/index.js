@@ -9,34 +9,34 @@ import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
 
 // These are the reducers that stores the inputs from the feedback loop
-const feeling = (state = [], action) => {
-  let newState = [...state];
+const feeling = (state = null, action) => {
+  let newState = state;
   if (action.type === "ADD_FEELING") {
-    newState = [...action.payload];
+    newState = action.payload;
   }
   return newState;
 };
 
-const understanding = (state = [], action) => {
-  let newState = [...state];
+const understanding = (state = null, action) => {
+  let newState = state;
   if (action.type === "ADD_UNDERSTANDING") {
-    newState = [...action.payload];
+    newState = action.payload;
   }
   return newState;
 };
 
-const support = (state = [], action) => {
-  let newState = [...state];
+const support = (state = null, action) => {
+  let newState = state;
   if (action.type === "ADD_SUPPORT") {
-    newState = [...action.payload];
+    newState = action.payload;
   }
   return newState;
 };
 
-const comments = (state = [], action) => {
-  let newState = [...state];
+const comments = (state = null, action) => {
+  let newState = state;
   if (action.type === "ADD_COMMENTS") {
-    newState = [...action.payload];
+    newState = action.payload;
   }
   return newState;
 };
