@@ -19,7 +19,7 @@ const Feeling = (props) => {
   }
 
   const updateRedux = () => {
-    props.dispatch({type: 'ADD_FEEDBACK', payload: input})
+    props.dispatch({type: 'ADD_FEELING', payload: input})
   }
 
   return (
