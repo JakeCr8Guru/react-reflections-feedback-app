@@ -23,6 +23,8 @@ const understanding = (state = null, action) => {
   let newState = state;
   if (action.type === "ADD_UNDERSTANDING") {
     newState = Number(action.payload);
+  } else if (action.type === "REST_LOOP") {
+    newState = action.payload;
   }
   return newState;
 };
@@ -31,6 +33,8 @@ const support = (state = null, action) => {
   let newState = state;
   if (action.type === "ADD_SUPPORT") {
     newState = Number(action.payload);
+  } else if (action.type === "REST_LOOP") {
+    newState = action.payload;
   }
   return newState;
 };
@@ -38,6 +42,8 @@ const support = (state = null, action) => {
 const comments = (state = '', action) => {
   let newState = state;
   if (action.type === "ADD_COMMENTS") {
+    newState = action.payload;
+  } else if (action.type === "REST_LOOP") {
     newState = action.payload;
   }
   return newState;

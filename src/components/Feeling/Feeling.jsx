@@ -20,13 +20,6 @@ import { connect } from "react-redux";
 
 const Feeling = (props) => {
 
-  // const [input, setInput] = useState(0);
-  
-  // const handleChange = (e) => {
-  //   setInput(e.target.value)
-  //   console.log(input);
-  // }
-
   const [value, setValue] = useState(0);
 
   const handleChangeForSlider = (value) => setValue(value);
@@ -43,7 +36,6 @@ const Feeling = (props) => {
         </Heading>
       </Box>
       <Box mt={8}>
-        {/* <Input onChange={handleChange} placeholder="1 - 10" size="lg" /> */}
         <Slider
           flex="1"
           defaultValue={5}
