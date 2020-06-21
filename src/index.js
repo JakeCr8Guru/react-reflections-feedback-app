@@ -23,8 +23,6 @@ const understanding = (state = null, action) => {
   let newState = state;
   if (action.type === "ADD_UNDERSTANDING") {
     newState = Number(action.payload);
-  } else if (action.type === "REST_LOOP") {
-    newState = action.payload;
   }
   return newState;
 };
@@ -33,8 +31,6 @@ const support = (state = null, action) => {
   let newState = state;
   if (action.type === "ADD_SUPPORT") {
     newState = Number(action.payload);
-  } else if (action.type === "REST_LOOP") {
-    newState = action.payload;
   }
   return newState;
 };
@@ -43,10 +39,23 @@ const comments = (state = '', action) => {
   let newState = state;
   if (action.type === "ADD_COMMENTS") {
     newState = action.payload;
-  } else if (action.type === "REST_LOOP") {
-    newState = action.payload;
   }
   return newState;
+};
+
+const appReducer = combineReducers({
+  feeling,
+  understanding,
+  support,
+  comments,
+});
+
+const rootReducer = (state, action) => {
+  if (action.type === "REST_LOOP") {
+    state = undefined;
+  }
+
+  return appReducer(state, action);
 };
 
 const storeInstance = createStore(
@@ -55,6 +64,7 @@ const storeInstance = createStore(
     understanding,
     support,
     comments,
+    rootReducer,
   }),
   // redux devtools (browser extension): could also do redux logger here
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()

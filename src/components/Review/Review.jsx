@@ -32,17 +32,17 @@ const Review = (props) => {
   const onClick = () => {
     onOpen();
     feedbackPost();
+    props.dispatch({ type: "REST_LOOP", payload: null });
   }
 
   const feedbackPost = () => {
-    const { feeling, understanding, support, comments, dispatch } = props;
+    const { feeling, understanding, support, comments } = props;
     const feedback = { feeling, understanding, support, comments };
     console.log(feedback);
     axios
       .post("/api/feedback", feedback)
       .then((res) => {
         console.log(res);
-        dispatch({ type: "REST_LOOP", payload: null });
         // redirect the user to the confirmation page
         props.history.push("/");
       })
