@@ -49,6 +49,15 @@ const comments = (state = '', action) => {
   return newState;
 };
 
+const feedback = (state = [], action) => {
+  let newState = [...state];
+  if (action.type === "ADD_FEEDBACK") {
+    newState = [...state, action.payload];
+  }
+  return newState;
+}
+
+// This reducer may reset state, but I am not sure
 const appReducer = combineReducers({
   feeling,
   understanding,
@@ -71,6 +80,7 @@ const storeInstance = createStore(
     support,
     comments,
     rootReducer,
+    feedback,
   }),
   // redux devtools (browser extension): could also do redux logger here
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
