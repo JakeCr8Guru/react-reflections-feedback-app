@@ -3,10 +3,10 @@ import React from "react";
 const AdminListItem = (props) => {
   return (
     <tr>
-      <td>{props.feedback.feeling}</td>
-      <td>{props.feedback.understanding}</td>
-      <td>{props.feedback.support}</td>
-      <td>{props.feedback.comments}</td>
+      <td>{props.reflection.feeling}</td>
+      <td>{props.reflection.understanding}</td>
+      <td>{props.reflection.support}</td>
+      <td>{props.reflection.comments}</td>
       <td>Button here</td>
     </tr>
   )

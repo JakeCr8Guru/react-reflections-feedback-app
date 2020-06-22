@@ -48,7 +48,7 @@ const Content = () => {
         <Route path="/review">
           <Review />
         </Route>
-        <Route path="/review">
+        <Route path="/admin">
           <Admin />
         </Route>
       </Router>

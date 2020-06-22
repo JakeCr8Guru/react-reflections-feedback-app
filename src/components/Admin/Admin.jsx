@@ -17,13 +17,16 @@ import AdminList from "../AdminList/AdminList";
 // This component will display the admin page that has all the information from the DB
 const Admin = (props) => {
 
+  const [newFeedback, setFeedback] = useState(props.feedback);
+
   const feedbackGet = () => {
-    const { dispatch } = this.props;
+    const { dispatch } = props;
     axios
       .get("/api/feedback")
       .then((res) => {
         console.log(res);
         dispatch({ type: 'ADD_FEEDBACK', payload: res.data })
+        setFeedback(res.data)
       })
       .catch((err) => {
         console.log(err);
@@ -31,14 +34,16 @@ const Admin = (props) => {
       });
   };
 
-  useEffect(feedbackGet())
-
-  const [feedback, setFeedback] = useState(props.feedback);
+  useEffect(() => {
+    feedbackGet()
+  })
 
   return (
     <>
     <Grid gridColumn="column">
-      <AdminList feedback={feedback}/>
+      <table>
+          <AdminList feedback={newFeedback} />
+      </table>
     </Grid>
     </>
   )
