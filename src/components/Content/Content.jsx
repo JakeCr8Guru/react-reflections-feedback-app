@@ -20,7 +20,7 @@ const Content = () => {
   return (
     <Flex
       bg="gray.50"
-      size="500px"
+      size="600px"
       align="center"
       justify="center"
       color="gray.80"

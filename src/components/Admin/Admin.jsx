@@ -8,7 +8,9 @@ import axios from "axios";
 
 // Chakra imports:
 import {
-  Grid
+  Grid,
+  Box,
+  Button
 } from "@chakra-ui/core";
 
 // Component imports:
@@ -34,16 +36,38 @@ const Admin = (props) => {
       });
   };
 
-  useEffect(() => {
+  const refreshFeedback = () => {
     feedbackGet()
-  })
+  }
 
   return (
     <>
     <Grid gridColumn="column">
-      <table>
-          <AdminList feedback={newFeedback} />
-      </table>
+        <Button
+          onClick={refreshFeedback}
+          variantColor="green"
+          variant="outline"
+          size="lg"
+          height="48px"
+          width="200px"
+          border="2px"
+        >
+          Refresh
+          </Button>
+      <Box>
+          <table>
+            <thead>
+              <tr>
+                <th>Feeling</th>
+                <th>Comprehension</th>
+                <th>Support</th>
+                <th>Comments</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <AdminList feedback={newFeedback} />
+          </table>
+      </Box>
     </Grid>
     </>
   )
