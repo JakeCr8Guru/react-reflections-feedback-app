@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // Redux imports:
 import { connect } from "react-redux";
@@ -10,6 +10,9 @@ import axios from "axios";
 import {
   Grid
 } from "@chakra-ui/core";
+
+// Component imports:
+import AdminList from "../AdminList/AdminList";
 
 // This component will display the admin page that has all the information from the DB
 const Admin = (props) => {
@@ -28,11 +31,15 @@ const Admin = (props) => {
       });
   };
 
-  useEffect(feedbackGet());
+  useEffect(feedbackGet())
+
+  const [feedback, setFeedback] = useState(props.feedback);
 
   return (
     <>
-    <Grid gridColumn="column"></Grid>
+    <Grid gridColumn="column">
+      <AdminList feedback={feedback}/>
+    </Grid>
     </>
   )
 }
