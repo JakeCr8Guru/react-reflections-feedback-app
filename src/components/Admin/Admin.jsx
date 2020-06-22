@@ -8,6 +8,7 @@ import {
   Grid
 } from "@chakra-ui/core";
 
+// This component will display the admin page that has all the information from the DB
 const Admin = (props) => {
   return (
     <>

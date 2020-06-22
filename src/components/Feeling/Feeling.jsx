@@ -18,6 +18,8 @@ import {
 // Redux imports:
 import { connect } from "react-redux";
 
+
+// This component is the first state component and carries the feeling value
 const Feeling = (props) => {
 
   const [value, setValue] = useState(0);

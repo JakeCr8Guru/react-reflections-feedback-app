@@ -15,6 +15,7 @@ import Comments from "../Comments/Comments";
 import Review from "../Review/Review";
 import Admin from "../Admin/Admin";
 
+// This component holds all the componets of state that have different routes to them.
 const Content = () => {
   return (
     <Flex

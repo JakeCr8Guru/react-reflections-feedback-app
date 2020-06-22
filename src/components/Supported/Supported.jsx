@@ -18,6 +18,7 @@ import {
 // Redux imports:
 import { connect } from "react-redux";
 
+// This component is the third state component and carries the support value
 const Supported = (props) => {
 
   const [value, setValue] = useState(0);

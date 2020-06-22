@@ -18,6 +18,7 @@ import {
 // Redux imports:
 import { connect } from "react-redux";
 
+// This component is the second state component and carries the understanding value
 const Understanding = (props) => {
 
   const [value, setValue] = useState(0);

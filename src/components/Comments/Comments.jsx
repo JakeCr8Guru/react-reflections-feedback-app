@@ -9,6 +9,7 @@ import { Grid, Heading, Box, Button, Input } from "@chakra-ui/core";
 // Redux imports:
 import { connect } from "react-redux";
 
+// This component is the fourth state component and carries the comments value
 const Comments = (props) => {
 
   const [input, setInput] = useState('');

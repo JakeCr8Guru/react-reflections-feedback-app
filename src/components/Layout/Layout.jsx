@@ -7,6 +7,8 @@ import { Flex } from "@chakra-ui/core";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
+// This component holds the header and footer component
+// It also passes the childern prop which will wrap the Content components
 const Layout = (props) => {
   return (
     <>

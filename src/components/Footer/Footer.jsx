@@ -3,6 +3,7 @@ import React from "react";
 // Chakra imports:
 import { Heading, Flex } from "@chakra-ui/core";
 
+// This is the Footer component that is displayed on every route
 const Footer = () => {
   return (
     <>

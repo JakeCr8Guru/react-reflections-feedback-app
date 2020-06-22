@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 // Chakra imports:
 import { Grid, Heading, Box, Button } from "@chakra-ui/core";
 
+// This component is the "home page" of the app
 const Start = () => {
   return (
     <Grid gridColumn="column">

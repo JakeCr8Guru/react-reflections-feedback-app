@@ -25,6 +25,8 @@ import { connect } from "react-redux";
 // Axios imports:
 import axios from "axios";
 
+// This component displays all the global states on the page
+// It also lets you submit the form to the DB, tells you that you have finished, and resets the loop to start over
 const Review = (props) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();

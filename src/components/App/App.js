@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 
-// React Router DOM imports:
-// import { HashRouter as Router } from "react-router-dom";
-
 // Chakra imports:
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
 
@@ -11,6 +8,7 @@ import { ThemeProvider, CSSReset } from "@chakra-ui/core";
 import Layout from "../Layout/Layout";
 import Content from "../Content/Content";
 
+// This component renders the whole body of the app
 class App extends Component {
   render() {
     return (
